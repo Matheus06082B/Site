@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energyzed Natural Proudcts - Energéticos Naturais</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0c0c0c;
+      color: #e6e6e6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #00ff00;
+    }
+
+    header h1 {
+      color: #00ff00;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #e6e6e6;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ff00;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/nature-banner.jpg') center/cover no-repeat;
+      color: #00ff00;
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #00ff00;
+      border-bottom: 2px solid #00ff00;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .produtos-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .produto {
+      background: #1a1a1a;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,255,0,0.3);
+      padding: 1rem;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .produto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .produto h3 {
+      color: #00ff00;
+      margin-top: 0.5rem;
+    }
+
+    button {
+      background-color: #00ff00;
+      color: #0c0c0c;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    button:hover {
+      background-color: #bfff00;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #00ff00;
+      border-radius: 5px;
+      background-color: #121212;
+      color: #e6e6e6;
+    }
+
+    form button {
+      width: 100%;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #00ff00;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 3px solid #00ff00;
+    }
+
+    @media (max-width: 768px) {
+      .produtos-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Energyzed Natural Proudcts</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#carrinho">🛒 Carrinho (<span id="carrinho-contador">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner personalizado -->
+  <section id="banner-personalizado" style="text-align: center; background-color: #121212; padding: 2rem;">
+    <img src="ENP banner.jpg" alt="Banner Personalizado" style="max-width: 100%; height: auto; border: 3px solid #00ff00; border-radius: 10px;">
+  </section>
+
+  <section id="home" class="hero">
+    <h2>Revitalize sua energia com saúde!</h2>
+    <p>Conheça nossos energéticos naturais, feitos com ingredientes orgânicos e sustentáveis.</p>
+  </section>
+
+  <section id="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="produtos-container">
+      <div class="produto">
+        <img src="Guara.png" alt="Energético de Guaraná Natural">
+        <h3>Guaraná Power</h3>
+        <p>Com guaraná da Amazônia, 100% natural.</p>
+        <button onclick="adicionarAoCarrinho('Guaraná Power')">Adicionar ao carrinho</button>
+      </div>
+      <div class="produto">
+        <img src="mate.png" alt="Energético de Erva-Mate">
+        <h3>Mate Boost</h3>
+        <p>Feito com erva-mate orgânica, sem açúcar refinado.</p>
+        <button onclick="adicionarAoCarrinho('Mate Boost')">Adicionar ao carrinho</button>
+      </div>
+      <div class="produto">
+        <img src="baba.png" alt="Energético de Hibisco">
+        <h3>Hibisco Fresh</h3>
+        <p>Refrescante e funcional, com sabor suave de hibisco.</p>
+        <button onclick="adicionarAoCarrinho('Hibisco Fresh')">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>Na Energyzed Natural Proudcts (ENP), acreditamos que é possível ter mais energia sem abrir mão da saúde e do respeito ao meio ambiente. Somos uma empresa brasileira dedicada à criação de energéticos naturais, produzidos com ingredientes 100% orgânicos e selecionados de forma responsável. Nosso compromisso é entregar produtos que revitalizam o corpo e a mente de forma equilibrada, sem aditivos químicos, conservantes ou açúcares refinados. Trabalhamos em parceria com pequenos produtores locais, garantindo qualidade, sustentabilidade e apoio à economia regional. Mais do que uma marca, somos um movimento em prol de um estilo de vida mais saudável, consciente e conectado à natureza. Se você busca energia de verdade, feita com responsabilidade e propósito, a EnerNat é para você.</p>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <form id="form-contato">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu email" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="carrinho">
+    <h2>Seu Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 EnerNat. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    let carrinho = {};
+
+    function adicionarAoCarrinho(produto) {
+      if (carrinho[produto]) {
+        carrinho[produto]++;
+      } else {
+        carrinho[produto] = 1;
+      }
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const contador = Object.values(carrinho).reduce((total, qnt) => total + qnt, 0);
+      document.getElementById('carrinho-contador').textContent = contador;
+
+      const listaCarrinho = document.getElementById('lista-carrinho');
+      listaCarrinho.innerHTML = '';
+
+      if (contador === 0) {
+        listaCarrinho.innerHTML = '<li>Seu carrinho está vazio.</li>';
+      } else {
+        for (let produto in carrinho) {
+          const item = document.createElement('li');
+          item.textContent = `${produto} x${carrinho[produto]}`;
+          listaCarrinho.appendChild(item);
+        }
+
+        const btnLimpar = document.createElement('button');
+        btnLimpar.textContent = 'Esvaziar Carrinho';
+        btnLimpar.style.marginTop = '1rem';
+        btnLimpar.onclick = esvaziarCarrinho;
+        listaCarrinho.appendChild(btnLimpar);
+      }
+    }
+
+    function esvaziarCarrinho() {
+      carrinho = {};
+      atualizarCarrinho();
+    }
+
+    document.getElementById('form-contato').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const nome = event.target.nome.value;
+      const email = event.target.email.value;
+      const mensagem = event.target.mensagem.value;
+      alert(`Mensagem enviada com sucesso!\nNome: ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`);
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
